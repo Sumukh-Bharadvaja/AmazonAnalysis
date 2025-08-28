@@ -14,17 +14,66 @@ To respect first normal form (**_1NF_**), each attribute must have atomic values
 Furthermore, I created a new database and imported the dataset into the **SQL Server Management System (SSMS)**. To eliminate functional and transitive dependencies (**2NF & 3NF** ), I created new tables/entities and the corresponding primary and foreign keys. 
 
   The final ER Diagram looks like this:
-  ![image](https://github.com/mara1103/PowerBI_project/assets/53566633/5b8f43a4-69f4-433d-91ae-c0456a6f7a88)
+  ![image](img/1.png)
 
 ### Reporting 
 #### Power BI
-For a better understanding, through the introductory report I have added a brief description of the E-commerce company, as well as of the data to be analyzed. The dataset includes details related to Amazon India's Q2 2022 sales. I considered it relevant to add financial statistics of the company at global level, taken from the source: ["Amazon.com, Inc. - Amazon.com Announces First Quarter Results (aboutamazon.com)"](https://ir.aboutamazon.com/news-release/news-release-details/2023/Amazon.com-Announces-First-Quarter-Results/). I used Power BI functions to add a table from web, similar to a web scraping technique. The chart is based on the global data, and the cards on the initial dataset. 
+For a better understanding, through the introductory report I have added a brief description of the E-commerce company, as well as of the data to be analyzed. The dataset includes details related to Amazon India's Q2 2022 sales. I considered it relevant to add financial statistics of the company at global level, taken from Amazon's quarterly reports. I used Power BI functions to add a table from web, similar to a web scraping technique. The chart is based on the global data, and the cards on the initial dataset. 
 
-![image](https://github.com/mara1103/PowerBI_project/assets/53566633/5e50e5fd-df1d-4178-b465-56dd26e0bbd6)
+![image](img/Dashboard.png)
 
 Similarly, the following reports will reveal information related to the products purchased, the locations where the orders were distributed, total sales, prices, and finally a sales prediction exercise for the next month.
 
-You can find the whole project in the same repository here : [AmazonSalesAnalysis.pbix](https://github.com/mara1103/PowerBI_project/blob/c531336ca3693d7b48727e27da0ab373b47e6f98/AmazonSalesAnalysis.pbix) .
+Some of the dashboards are as follows
+
+### Locations Map
+![Locations Map](img/Dashboard_2.png)
+This dashboard provides a geographic visualization of orders placed across India. It highlights the top cities and states by order volume, such as Bengaluru, Hyderabad, and Mumbai for cities, and Karnataka, Maharashtra, and Tamil Nadu for states. The map uses markers to represent order density, offering insights into regional performance and market penetration. Additional visualizations include treemaps for top cities and states, enabling a comparative analysis of order distribution.
+
+
+### Orders Table
+![Orders Table](img/Dashboard_3.png)
+This dashboard provides a detailed transaction-level view (Drill-through analytics -ship_city -Bengaluru) of orders placed. It includes columns such as Order ID, Date, Shipping City, Shipping State, Fulfillment method, Status, Shipping Service Level, Sum of Amount, and B2B indicator. This table allows users to analyze individual orders, track shipment statuses, and understand fulfillment methods. It is particularly useful for auditing, customer service, and operational analysis.
+
+
+### Products & Sales Details
+![Products & Sales Details](img/Dashboard_4.png)
+This dashboard provides a detailed analysis of product sales and order trends over time. Key metrics include the number of orders, money spent on products, and total quantity of products sold. Visualizations include:
+- Monthly breakdown of orders and products.
+- B2B order analysis.
+- Product categories ranked by number of orders and sales amount.
+- Average sales per month and fulfillment method comparison.
+- Category slicers for filtering data.
+- Scatter plot showing categories by number of orders and average price.
+This dashboard is ideal for understanding product performance, identifying top-selling categories, and optimizing pricing strategies.
+
+### Prices & Promotions
+![Prices & Promotions](img/Dashboard_5.png)
+This dashboard provides insights into pricing strategies and promotional impacts across different states and product categories. Key features include:
+- Scatter plot showing the sum of amount, average price, and count of orders by shipping state.
+- Average price trends by month and category.
+- Analysis of promotional code impact on price, including linear regression trends.
+- Correlation between promotional codes and price trends.
+This dashboard is ideal for understanding price elasticity, evaluating promotional effectiveness, and optimizing pricing strategies for different regions and product categories.
+
+### Decomposition Tree
+![Decomposition Tree](img/Dashboard_6.png)
+This dashboard provides a hierarchical breakdown of sales data, enabling users to drill down into specific categories, states, and cities. Key features include:
+- Visualization of sales amount split by fulfillment method (Amazon vs Merchant).
+- Detailed analysis of product categories such as Set, Kurta, and Western Dress.
+- State-level breakdown highlighting top-performing states like Maharashtra and Karnataka.
+- City-level insights showcasing cities such as Mumbai and Pune.
+This dashboard is ideal for understanding the distribution of sales across different dimensions, identifying regional trends, and optimizing fulfillment strategies.
+
+### Forecasting Dashboard
+![Forecasting Dashboard](img/Dashboard_7.png)
+This dashboard provides insights into historical order trends and future predictions. Key features include:
+- Visualization of actual order data over time, highlighting peaks and troughs in order volume.
+- Forecasted order data using predictive analytics, showcasing expected trends for the upcoming months.
+- Filters for product category, B2B orders, fulfillment method, city, and state to customize the analysis.
+This dashboard is ideal for understanding historical performance, anticipating future demand, and making data-driven decisions for inventory and resource planning.
+
+
 
 ### Conclusions / Results
 Through the project, the best-selling products within the company can be identified, as well as the differences between them, the users being able to decide the possible evolution of each product category, improvement or promotion. The most successful categories within the company are: set, kurta and western dress.
@@ -33,50 +82,3 @@ The state with the most sales is Maharashtra with 20.8 K orders. Analyzes of sal
 
 Finally, the project can demonstrate the benefits of using Business Intelligence in the decision-making process in a company. Using the Power BI platform enabled data visualization and analysis in an interactive and efficient way.
 
-## Dashboards (Screenshots)
-Below are direct references to the dashboard images included in this repo.
-
-### Overview Dashboard
-![Overview Dashboard](img/Dashboard.png)
-One line: High‑level KPIs and trends by month, category, and fulfilment.
-
-### Detailed Dashboard
-![Detailed Dashboard](img/1.png)
-One line: Deeper breakdown with slicers plus monthly orders, sales and category price insights.
-
-For all pages in one place, open the exported PDF: `AmazonSalesAnalysis.pdf`.
-
-## All Dashboards (img folder)
-Below are the images from `img/` with one-line explanations so they render correctly on GitHub.
-
-### Overview Dashboard
-![Overview Dashboard](img/Dashboard.png)
-One line: High-level KPIs and trends by month, category, and fulfilment.
-
-### Products & Sales Details
-![Products & Sales Details](img/1.png)
-One line: Deeper breakdown with slicers plus monthly orders, sales and category price insights.
-
-### Introduction Page
-![Introduction Page](img/Dashboard_2.png)
-One line: Project introduction with global revenue vs. costs and key metrics.
-
-### Orders Table
-![Orders Table](img/Dashboard_3.png)
-One line: Transaction-level table of orders, shipment details, status and amounts.
-
-### Decomposition Tree
-![Decomposition Tree](img/Dashboard_4.png)
-One line: Root-cause breakdown of Amount by fulfilment, category, state and city.
-
-### Forecast
-![Forecast](img/Dashboard_5.png)
-One line: Actual daily orders with trend and a forecast projection for the next period.
-
-### Prices & Promotions
-![Prices & Promotions](img/Dashboard_6.png)
-One line: Price distribution by state/category and promo code impact on price.
-
-### Locations Map
-![Locations Map](img/Dashboard_7.png)
-One line: Geographic distribution of orders with top cities and states.
